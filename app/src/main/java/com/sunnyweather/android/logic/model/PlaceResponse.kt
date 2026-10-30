@@ -1,4 +1,3 @@
-import android.health.connect.datatypes.ExerciseRoute.Location
 import com.google.gson.annotations.SerializedName
 
 data class PlaceResponse(val status: String, val places: List<Place>)

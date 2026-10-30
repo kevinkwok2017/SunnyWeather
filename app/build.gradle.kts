@@ -33,6 +33,9 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -48,6 +51,7 @@ dependencies {
     // Lifecycle：生命周期相关
     implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.2.0")
+    implementation("androidx.lifecycle:lifecycle-livedata:2.2.0")
     // SwipeRefreshLayout：下拉刷新
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.0.0")
     // Retrofit：网络请求

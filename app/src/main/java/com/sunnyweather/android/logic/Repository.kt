@@ -1,5 +1,6 @@
 package com.sunnyweather.android.logic
 
+import Place
 import androidx.lifecycle.liveData
 import com.sunnyweather.android.logic.network.SunnyWeatherNetwork
 import kotlinx.coroutines.Dispatchers
@@ -23,6 +24,7 @@ object Repository {
             }
         }
         catch (e: Exception){
+            Result.failure<List<Place>>(e)
         }
         emit(result)//把result发送给LiveData
     }
