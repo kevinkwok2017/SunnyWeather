@@ -46,6 +46,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation("androidx.drawerlayout:drawerlayout:1.1.1")
     // RecyclerView：列表
     implementation("androidx.recyclerview:recyclerview:1.0.0")
     // Lifecycle：生命周期相关

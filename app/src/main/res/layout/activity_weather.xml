@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/weather_background">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="24dp">
+
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@color/colorPrimary"
+                    app:navigationIcon="@drawable/ic_menu"
+                    app:navigationIconTint="@color/white"
+                    app:titleTextColor="@color/white" />
+
+                <LinearLayout
+                    android:id="@+id/weatherLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorPrimary"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="24dp">
+
+                        <TextView android:id="@+id/currentTempText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/white" android:textSize="64sp" />
+                        <TextView android:id="@+id/currentSkyText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:textColor="@color/white" android:textSize="20sp" />
+                        <TextView android:id="@+id/currentAqiText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:textColor="@color/white" android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="今日概况" android:textSize="18sp" android:textStyle="bold" />
+                            <TextView android:id="@+id/todaySkyText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:textSize="16sp" />
+                            <TextView android:id="@+id/todayTempText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:textSize="16sp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="生活指数" android:textSize="18sp" android:textStyle="bold" />
+                            <TextView android:id="@+id/coldRiskText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" />
+                            <TextView android:id="@+id/carWashingText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" />
+                            <TextView android:id="@+id/ultravioletText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" />
+                            <TextView android:id="@+id/dressingText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <fragment
+        android:id="@+id/placeFragment"
+        android:name="com.sunnyweather.android.ui.place.PlaceFragment"
+        android:layout_width="320dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="?android:windowBackground" />
+</androidx.drawerlayout.widget.DrawerLayout>

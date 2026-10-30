@@ -5,11 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.sunnyweather.android.R
 
-class PlaceAdapter (private val fragment: Fragment,private val placeList:List<Place>):
+class PlaceAdapter(
+    private val placeList: List<Place>,
+    private val onPlaceClick: (Place) -> Unit
+):
         RecyclerView.Adapter<PlaceAdapter.ViewHolder>(){
 
             inner class ViewHolder(view: View): RecyclerView.ViewHolder(view){
@@ -25,6 +27,7 @@ class PlaceAdapter (private val fragment: Fragment,private val placeList:List<Pl
                 val place = placeList[position]
                 holder.placeName.text = place.name
                 holder.placeAddress.text = place.address
+                holder.itemView.setOnClickListener { onPlaceClick(place) }
                 }
             override fun getItemCount() = placeList.size
 }
