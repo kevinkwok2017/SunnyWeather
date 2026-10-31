@@ -1,10 +1,44 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/weather_background"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="32dp">
 
-    <fragment
-        android:id="@+id/placeFragment"
-        android:name="com.sunnyweather.android.ui.place.PlaceFragment"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SunnyWeather"
+        android:textColor="@color/colorPrimary"
+        android:textSize="32sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="选择一个功能开始使用"
+        android:textColor="?android:attr/textColorSecondary"
+        android:textSize="16sp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/plantManagementButton"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-</FrameLayout>
+        android:layout_height="64dp"
+        android:layout_marginTop="48dp"
+        android:text="植物管理"
+        android:textSize="18sp"
+        app:cornerRadius="12dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/weatherButton"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginTop="16dp"
+        android:text="天气信息"
+        android:textSize="18sp"
+        app:cornerRadius="12dp" />
+</LinearLayout>
